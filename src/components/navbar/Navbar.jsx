@@ -10,7 +10,7 @@ const navList = [
 
 export const Navbar = () => {
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: "flex" }} >
       <AppBar
         position="fixed"
         component="nav"
