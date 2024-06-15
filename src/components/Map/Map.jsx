@@ -1,17 +1,16 @@
-import React from "react";
+import PropTypes from "prop-types";
 import provincias from "./provincias";
-import { SvgIcon } from "@mui/material";
 import "./Map.css";
 
 export const Map = ({ provinciasActivo = [] }) => {
   return (
-    <SvgIcon
-      sx={{
-        height:{xs:'300px', sm:'400px'},
-        width: {xs:'300px', sm:'400px'},
+    <svg
+      /*     sx={{
+        height: { xs: "300px", sm: "400px" },
+        width: { xs: "300px", sm: "400px" },
         stroke: "white",
         strokeWidth: 0.5,
-      }}
+      }} */
       baseProfile="tiny"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -32,6 +31,10 @@ export const Map = ({ provinciasActivo = [] }) => {
           </path>
         ))}
       </g>
-    </SvgIcon>
+    </svg>
   );
+};
+
+Map.propTypes = {
+  provinciasActivo: PropTypes.object,
 };
