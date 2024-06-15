@@ -1,11 +1,16 @@
+import { useEffect } from "react";
 import { Index } from "./pages/public/index/Index";
-import ThemeProvider from "./theme";
+import { PrimeReactProvider } from "primereact/api";
+import { addLocaleEs } from "./config/locale";
 
 function App() {
+  useEffect(() => {
+    addLocaleEs();
+  }, []);
   return (
-    <ThemeProvider>
-      <Index />
-    </ThemeProvider>
+    <PrimeReactProvider value={{ locale: "es", ripple: true }}>
+      <Index />;
+    </PrimeReactProvider>
   );
 }
 
