@@ -2,12 +2,20 @@ import { Button } from "primereact/button";
 import { DarkModeButton } from "./ChangeMode/DarkModeButton";
 import { AvatarButton } from "./Avatar/AvatarButton";
 import { navConfig } from "../../data/navConfig";
+import { useState } from "react";
+import { LeftBar } from "../Leftbar/LeftBar";
 
 export const Topbar = () => {
+  const [open, setOpen] = useState(false);
   return (
     <div className="p-2 flex align-items-center justify-content-between">
       <div className="sm:hidden">
-        <Button icon="pi pi-bars" rounded text />
+        <Button icon="pi pi-bars" rounded text onClick={() => setOpen(true)} />
+        <LeftBar
+          navConfig={navConfig}
+          onClose={() => setOpen(false)}
+          open={open}
+        />
       </div>
       <div className="hidden sm:inline w-6">
         <ul className="flex list-none gap-4">
